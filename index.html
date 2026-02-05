@@ -20,29 +20,42 @@
       background: radial-gradient(circle at top, #1e3a8a, #020617);
     }
 
-    header h1 { font-size: 3rem; font-weight: 700; overflow: hidden; white-space: nowrap; border-right: 3px solid #38bdf8; }
+    header h1 { font-size: 3rem; font-weight: 700; }
     header h1 span { color: #38bdf8; }
+    header p { margin-top: 1rem; max-width: 600px; color: #cbd5f5; }
 
-    .typing { animation: typing 3s steps(20), blink .7s infinite; }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    @keyframes blink {
-      50% { border-color: transparent }
-    }
-
-    .fade-delay { animation: fadeIn 1.5s ease forwards; animation-delay: 2s; opacity: 0; }
-    .fade-delay-2 { animation: fadeIn 1.5s ease forwards; animation-delay: 2.8s; opacity: 0; }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
+    section { padding: 80px 10%; }
     h2 { font-size: 2rem; margin-bottom: 30px; color: #38bdf8; }
+
+    .about p { max-width: 800px; }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: #020617;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #1e293b;
+      transition: transform 0.3s;
+    }
+    .skill-card:hover { transform: translateY(-5px); }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: #020617;
+      padding: 25px;
+      border-radius: 14px;
+      border: 1px solid #1e293b;
+    }
 
     footer {
       text-align: center;
@@ -54,10 +67,10 @@
 </head>
 <body>
 
-<<header>
-  <h1 class="typing">Bhawesh <span>Nama</span></h1>
-  <h3 class="fade-delay">Fresher Data Analyst</h3>
-  <p class="fade-delay-2">
+<header>
+  <h1>Bhawesh <span>Nama</span></h1>
+  <h3>Fresher Data Analyst</h3>
+  <p>
     Data Analyst aspirant pursuing B.Tech in Computer Science Engineering with hands-on training in
     Excel, SQL, Python, and Power BI. Passionate about turning data into insights.
   </p>
@@ -113,17 +126,5 @@
   <p>© 2026 Bhawesh Nama | Data Analyst Portfolio</p>
 </footer>
 
-<script>
-// Scroll animation
-const sections = document.querySelectorAll('section');
-window.addEventListener('scroll', () => {
-  sections.forEach(sec => {
-    const top = sec.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      sec.classList.add('show');
-    }
-  });
-});
-</script>
 </body>
 </html>
